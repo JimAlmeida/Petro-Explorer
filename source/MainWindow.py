@@ -1,5 +1,4 @@
 from DataVisualization import DataVisualization
-from HomePage import HomePage
 from Header import Header
 from Navigation import Navigation
 from PetrophysicsTopBar import PetrophysicsTopBar
