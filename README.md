@@ -8,7 +8,7 @@
  5. Digite a seguinte linha de comando no CMD: 
  `python -m pip install numpy scipy pandas requests ipython nbformat psutil plotly PySide2`
  Esse comando serve para instalar as bibliotecas utilizadas pelo programa.
-![Tela Instalação 4](https://imgur.com/SW5sahR.png)
+![Tela Instalação 4](https://imgur.com/zTS8Wcl.png)
  6. Faça o download deste repositório para o seu Desktop. Uma possível maneira é por realizar o download direto do GitHub (Download ZIP), como na imagem:
 ![Tela Instalação 5](https://imgur.com/zLWVvSw.png)
 7. Extraia os conteúdos do arquivo .zip para sua pasta de preferência.
