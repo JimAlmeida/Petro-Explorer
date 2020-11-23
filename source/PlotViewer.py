@@ -1,10 +1,9 @@
-from PySide2.QtWidgets import QWidget, QGridLayout, QApplication
+from PySide2.QtWidgets import QWidget, QGridLayout, QApplication, QFileDialog
 from PySide2.QtWebEngineWidgets import QWebEngineView
 from PySide2.QtCore import QUrl, Signal
 import sys
 import os
 import PlotControleEngine
-
 
 class PlotViewer(QWidget):
     feedPlotControls = Signal(str)
@@ -16,6 +15,8 @@ class PlotViewer(QWidget):
         self.setLayout(layout)
         self.json_data = ''
         self.plot_type = 'Regressão'
+        self.webView.page().profile().downloadRequested.connect(self.download_handler)
+
 
     def loadPlot(self, _url, _json=None, _type='Regressão'):
         assert(isinstance(_json, str))
@@ -33,6 +34,11 @@ class PlotViewer(QWidget):
         _url, self.json_data = pcengine.render()
         url = QUrl.fromLocalFile((os.path.abspath(_url)))
         self.webView.load(url)
+
+    def download_handler(self, item):
+        file_path = QFileDialog().getSaveFileName(self, "Salvar Plot", filter="PNG (*.png);;")
+        item.setPath(file_path[0])
+        item.accept()
 
 def test():
     app = QApplication(sys.argv)

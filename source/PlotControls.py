@@ -6,6 +6,7 @@ import json as j
 
 class PlotControls(QWidget):
     erasePlot = Signal(bool)
+
     def __init__(self):
         super().__init__()
 
@@ -72,33 +73,62 @@ class PlotControls(QWidget):
     def fillFromJson(self, _json):
         # json is the standard json export from the plotly library
         assert (isinstance(_json, str))
+
         j_obj = j.loads(_json)
+        print(j_obj)
+        
+        try:
+            if 'title' in list(j_obj['layout'].keys()):
+                self.modify_title.setText(str(j_obj['layout']['title']['text']))
+    
+            if 'type' in list(j_obj['layout']['xaxis'].keys()):
+                if j_obj['layout']['xaxis']['type'].lower() == 'log':
+                    self.modify_x_axis_type.setCurrentIndex(1)
+                else:
+                    self.modify_y_axis_type.setCurrentIndex(0)
+                    
+            if 'type' in list(j_obj['layout']['yaxis'].keys()):
+                if j_obj['layout']['yaxis']['type'].lower() == 'log':
+                    self.modify_y_axis_type.setCurrentIndex(1)
+                else:
+                    self.modify_y_axis_type.setCurrentIndex(0)
+    
+            if 'title' in list(j_obj['layout']['xaxis'].keys()):
+                self.modify_x_axis_label.setText(str(j_obj['layout']['xaxis']['title']['text']))
+            if 'title' in list(j_obj['layout']['yaxis'].keys()):
+                self.modify_y_axis_label.setText(str(j_obj['layout']['yaxis']['title']['text']))
+            if 'range' in list(j_obj['layout']['xaxis'].keys()):
+                self.modify_lower_x_range.setText(str(j_obj['layout']['xaxis']['range'][0]))
+                self.modify_upper_x_range.setText(str(j_obj['layout']['xaxis']['range'][1]))
+            if 'range' in list(j_obj['layout']['yaxis'].keys()):
+                self.modify_lower_y_range.setText(str(j_obj['layout']['yaxis']['range'][0]))
+                self.modify_upper_y_range.setText(str(j_obj['layout']['yaxis']['range'][1]))
+        except KeyError:
+            if 'title' in list(j_obj['layout']['template']['layout'].keys()):
+                self.modify_title.setText(str(j_obj['layout']['template']['layout']['title']['text']))
 
-        if 'title' in list(j_obj['layout'].keys()):
-            self.modify_title.setText(str(j_obj['layout']['title']['text']))
+            if 'type' in list(j_obj['layout']['template']['layout']['xaxis'].keys()):
+                if j_obj['layout']['template']['layout']['xaxis']['type'].lower() == 'log':
+                    self.modify_x_axis_type.setCurrentIndex(1)
+                else:
+                    self.modify_y_axis_type.setCurrentIndex(0)
 
-        if 'type' in list(j_obj['layout']['xaxis'].keys()):
-            if j_obj['layout']['xaxis']['type'].lower() == 'log':
-                self.modify_x_axis_type.setCurrentIndex(1)
-            else:
-                self.modify_y_axis_type.setCurrentIndex(0)
-                
-        if 'type' in list(j_obj['layout']['yaxis'].keys()):
-            if j_obj['layout']['yaxis']['type'].lower() == 'log':
-                self.modify_y_axis_type.setCurrentIndex(1)
-            else:
-                self.modify_y_axis_type.setCurrentIndex(0)
+            if 'type' in list(j_obj['layout']['template']['layout']['yaxis'].keys()):
+                if j_obj['layout']['template']['layout']['yaxis']['type'].lower() == 'log':
+                    self.modify_y_axis_type.setCurrentIndex(1)
+                else:
+                    self.modify_y_axis_type.setCurrentIndex(0)
 
-        if 'title' in list(j_obj['layout']['xaxis'].keys()):
-            self.modify_x_axis_label.setText(str(j_obj['layout']['xaxis']['title']['text']))
-        if 'title' in list(j_obj['layout']['yaxis'].keys()):
-            self.modify_y_axis_label.setText(str(j_obj['layout']['yaxis']['title']['text']))
-        if 'range' in list(j_obj['layout']['xaxis'].keys()):
-            self.modify_lower_x_range.setText(str(j_obj['layout']['xaxis']['range'][0]))
-            self.modify_upper_x_range.setText(str(j_obj['layout']['xaxis']['range'][1]))
-        if 'range' in list(j_obj['layout']['yaxis'].keys()):
-            self.modify_lower_y_range.setText(str(j_obj['layout']['yaxis']['range'][0]))
-            self.modify_upper_y_range.setText(str(j_obj['layout']['yaxis']['range'][1]))
+            if 'title' in list(j_obj['layout']['template']['layout']['xaxis'].keys()):
+                self.modify_x_axis_label.setText(str(j_obj['layout']['template']['layout']['xaxis']['title']['text']))
+            if 'title' in list(j_obj['layout']['template']['layout']['yaxis'].keys()):
+                self.modify_y_axis_label.setText(str(j_obj['layout']['template']['layout']['yaxis']['title']['text']))
+            if 'range' in list(j_obj['layout']['template']['layout']['xaxis'].keys()):
+                self.modify_lower_x_range.setText(str(j_obj['layout']['template']['layout']['xaxis']['range'][0]))
+                self.modify_upper_x_range.setText(str(j_obj['layout']['template']['layout']['xaxis']['range'][1]))
+            if 'range' in list(j_obj['layout']['template']['layout']['yaxis'].keys()):
+                self.modify_lower_y_range.setText(str(j_obj['layout']['template']['layout']['yaxis']['range'][0]))
+                self.modify_upper_y_range.setText(str(j_obj['layout']['template']['layout']['yaxis']['range'][1]))
 
         return
 

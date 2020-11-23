@@ -3,13 +3,28 @@ import numpy as np
 import pandas as pd
 import StreamDiverter as sd
 import plotly.io as pio
+from Rock import extractor
+
+def boxplotDataCleaner(_data):
+    #flatten, remove strs and then convert to df
+
+    ndata = pd.DataFrame(_data).transpose()
+    rows = ndata.shape[1]
+    columns = ndata.shape[0]
+
+    auxdata = []
+
+    for c in range(columns):
+        d = [float(x) for x in list(ndata.iloc[c]) if extractor(x)]
+        auxdata.append(d)
+
+    return pd.DataFrame(auxdata).transpose()
 
 def boxplotManifold(data, box_orientation, queue):
-    data = np.array([float(y) for y in data if y.strip('-').isnumeric()])
     try:
-        ndata = pd.DataFrame(data, dtype=np.float64)
+        ndata = boxplotDataCleaner(data)
     except ValueError:
-        return 'Error'
+        print('Error')
     boxes = Boxplot(ndata, box_orientation)
     boxes.plot()
     queue.put([boxes.plot_path, boxes.json])

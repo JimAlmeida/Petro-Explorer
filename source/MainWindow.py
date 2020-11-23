@@ -378,22 +378,20 @@ class MainWindow(QMainWindow):
 
     def startTCoa(self):
         #you need to ascertain if x corresponds to Permeability, y to Porosity and z to Swir/Svgr
-        if self.p_options_2.payload['x_column'] != '':
+        prp = self.p_options_2.payload['calculate']
+
+        if prp == "Swir (%)":
             xdata = self.spreadsheet.model.input_data[:,
                     self.spreadsheet.model.header_info.index(self.p_options_2.payload['x_column'])]
-        else:
-            xdata = []
-        if self.p_options_2.payload['y_column'] != '':
             ydata = self.spreadsheet.model.input_data[:,
                     self.spreadsheet.model.header_info.index(self.p_options_2.payload['y_column'])]
+            zdata = None
         else:
-            ydata = []
-        if self.p_options_2.payload['z_column'] != '':
+            xdata = None
+            ydata = self.spreadsheet.model.input_data[:,
+                    self.spreadsheet.model.header_info.index(self.p_options_2.payload['y_column'])]
             zdata = self.spreadsheet.model.input_data[:,
-                    self.spreadsheet.model.header_info.index(self.p_options_2.payload['z_column'])]
-        else:
-            zdata = []
-        prp = self.p_options_2.payload['calculate']
+                    self.spreadsheet.model.header_info.index(self.p_options_2.payload['x_column'])]
 
         io_operations_handler = HandlerThread()
         io_operations_handler.messageSent.connect(self.status_bar.showMessage)
@@ -509,7 +507,8 @@ class MainWindow(QMainWindow):
 
     def displayLuci(self, results):
         self.loadPltE(results[:2])
-        self.p_options_5.results.setText('Número médio de fábrica de rocha: ' + str(round(results[2], 4)))
+        results[2].insert(0, 'Resultados - RFN/Lucia')
+        self.spreadsheet.addColumn(results[2])
 
     def displayFZIR(self, results):
         results[0].insert(0, 'Resultados - RQI (μm)')
@@ -519,14 +518,10 @@ class MainWindow(QMainWindow):
         self.loadPltE(results[2:])
 
     def displayRegr(self, display_name, results):
-        results.insert(0, 'Resultados da Regressão')
-        self.spreadsheet.addColumn(results[0])
-        self.s_options_1.results.setText(str(results[0])+results[1])
+        self.s_options_1.results.setText(str(results[0]))
         self.loadPltE(results[-2:])
 
     def displayStat(self, display_name, results):
-        results.insert(0, 'Resultados - Estatística')
-        self.spreadsheet.addColumn(results)
         self.s_options_2.results.setText(str(results))
 
     def displayHist(self, results):

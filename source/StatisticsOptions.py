@@ -9,7 +9,7 @@ class StatisticsOptions(QWidget):
     polymorphic_states = {
       'Regression': {'dtext': 'Tipo de Regressão:', 'xtext': 'Selecione a coluna dos valores correspondentes à variável independente:', 'ytext': 'Selecione a coluna dos valores correspondentes à variável dependente:', 'dropdown': ['Linear', 'Exponencial', 'Logarítmica', 'Potencial', 'Polinomial'], 'ctext':''},
       'Statistics': {'dtext': 'Tipo de análise estatística:', 'xtext': 'Selecione a coluna dos valores para realizar a análise:', 'ytext': '', 'dropdown': ['Média aritmética', 'Mediana', 'Moda', 'Variância Pop.', 'Variância Am.', 'Desvio Padrão Pop.', 'Desvio Padrão Am.', 'Máximo', 'Mínimo', 'Amplitude', 'Quartil', 'Percentil'], 'ctext':''},
-      'Histogram':  {'dtext': '', 'xtext': 'Selecione a coluna com os valores:', 'ytext': 'Selecione o número de classes:', 'dropdown': [], 'ctext':''},
+      'Histogram':  {'dtext': '', 'xtext': 'Selecione a coluna com os valores:', 'ytext': '', 'dropdown': [], 'ctext':''},
       'Boxplot':    {'dtext': 'Orientação do gráfico:', 'ctext': 'Selecione as colunas onde se encontram as séries para o Boxplot (i.e. B, B:C, A:C:F:G):', 'ytext': '', 'dropdown': ['Vertical', 'Horizontal'], 'xtext':''},
     }
     ready2calculate = Signal(bool)

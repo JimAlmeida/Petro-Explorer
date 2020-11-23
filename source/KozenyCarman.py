@@ -11,7 +11,7 @@ def kCarmanManifold(_k, _phi, svgr, calculation, queue):
     if calculation == "Permeabilidade (mD)":
         kc_calculation.calcK()
         results = sample.getK()
-    elif calculation == "Porosidade (decimal)":
+    elif calculation == "Porosidade (%)":
         kc_calculation.calcPhi()
         results = sample.getPhi()
     elif calculation == "SVgr (cm-1)":
@@ -27,10 +27,11 @@ def kCarmanManifold(_k, _phi, svgr, calculation, queue):
 
 
 class KozenyCarman:
-    def __init__(self, _amostra, _svgr=None):
-        self.amostra = _amostra
+    def __init__(self, _sample, _svgr=None):
+        self.rock = _sample
         self.tortuosidade = []
         self.svgr = None
+        self.rock.setPhi([p / 100 for p in _sample.getPhi()])  # convert porosity from % to decimal
 
         if _svgr is None:
             _svgr = []
@@ -38,14 +39,14 @@ class KozenyCarman:
             self.svgr = [float(y) for y in _svgr if extractor(y)]
 
     def calcSVGR(self):
-        phi = self.amostra.getPhi()
-        k = [_k * ((10**-11)/0.9869) for _k in self.amostra.getK()] #convert mD to cm2
+        phi = self.rock.getPhi().copy()
+        k = [_k * ((10**-11)/0.9869) for _k in self.rock.getK()] #convert mD to cm2
         self.svgr = [m.sqrt(1 / (5 * k[i]) * (phi[i] ** 3 / (1 - phi[i]) ** 2)) for i in range(len(phi))]
 
     def calcK(self):
-        phi = self.amostra.getPhi()
+        phi = self.rock.getPhi().copy()
         k = [(1/(5*(self.svgr[i]**2))*(phi[i]**3/(1-phi[i])**2))*(0.9869*(10**11)) for i in range(len(phi))]
-        self.amostra.setK(array(k))
+        self.rock.setK(array(k))
 
     def calcTort(self):
         pass

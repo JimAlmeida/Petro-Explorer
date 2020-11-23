@@ -23,6 +23,7 @@ class Lucia:
         self.lrgr = np.array([])
         self.plot = go.Figure()
         self.json = ''
+        self.rock.setPhi([p / 100 for p in _sample.getPhi()])  # convert porosity from % to decimal
 
     def canvas(self):
         self.rfnData()
@@ -81,7 +82,7 @@ class Lucia:
         
     def rFNumber(self):
         """
-        Calcula o número rfn médio
+        Calcula o número rfn
         :return:
         """
         A = 9.7982
@@ -89,12 +90,14 @@ class Lucia:
         C = 8.6711
         D = 8.2965
 
-        k = np.mean(self.rock.getK())
-        phi = np.mean(self.rock.getPhi())
+        k = self.rock.getK()
+        phi = self.rock.getPhi()
+        rfn = []
 
-        numerator = pow(10, A+C*math.log10(phi))
-        denominator = k
-        inverse_power = B+D*math.log10(phi)
+        for i in range(len(k)):
+            numerator = pow(10, A+C*math.log10(phi[i]))
+            denominator = k[i]
+            inverse_power = B+D*math.log10(phi[i])
+            rfn.append(pow(numerator/denominator, 1/inverse_power))
 
-        rfn = pow(numerator/denominator, 1/inverse_power)
         return rfn

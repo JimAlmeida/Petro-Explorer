@@ -3,10 +3,13 @@ import pandas as pd
 import StreamDiverter as sd
 import plotly.io as pio
 import numpy as np
+from Rock import extractor
 
 
 def histogramManifold(data, _nbins, queue):
-    data = np.array([float(y) for y in data if y.strip('-').isnumeric()])
+    if _nbins == '':
+        _nbins=0
+    data = np.array([float(y) for y in data if extractor(y)])
     try:
         ndata = pd.DataFrame(data)
         nbins = int(_nbins)
@@ -23,7 +26,14 @@ class Histogram:
         self.nbins = bins
 
         self.fig = go.Figure()
-        self.fig.add_trace(go.Histogram(x=self.data, nbinsx=self.nbins))
+        self.fig.add_trace(go.Histogram(x=self.data, autobinx=True))
+        self.fig.update_layout(
+            title_text='Histograma',  # title of plot
+            xaxis_title_text='X',  # xaxis label
+            yaxis_title_text='Número de elementos',  # yaxis label
+            bargap=0.1,  # gap between bars of adjacent location coordinates
+            bargroupgap=0.0  # gap between bars of the same location coordinates
+        )
         self.plot_path = ''
         self.json = ''
 

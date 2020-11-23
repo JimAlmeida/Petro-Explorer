@@ -68,23 +68,25 @@ class PasteFromClipboard(QAction):
         t = ''
         row = row_start
         column = column_start
-
-        for c in clipboard:
-            if c == '\t':
-                self.table_widget.model.input_data[row][column] = t
-                self.table_widget.model.dataChanged.emit(row, column)
-                column += 1
-                t = ''
-            elif c == '\n':
-                self.table_widget.model.input_data[row][column] = t
-                self.table_widget.model.dataChanged.emit(row, column)
-                row += 1
-                column -= (column-column_start)
-                t = ''
-            else:
-                t = t + c
-        self.table_widget.model.input_data[row][column] = t
-        self.table_widget.model.dataChanged.emit(row, column)
+        try:
+            for c in clipboard:
+                if c == '\t':
+                    self.table_widget.model.input_data[row][column] = t
+                    self.table_widget.model.dataChanged.emit(row, column)
+                    column += 1
+                    t = ''
+                elif c == '\n':
+                    self.table_widget.model.input_data[row][column] = t
+                    self.table_widget.model.dataChanged.emit(row, column)
+                    row += 1
+                    column -= (column-column_start)
+                    t = ''
+                else:
+                    t = t + c
+            self.table_widget.model.input_data[row][column] = t
+            self.table_widget.model.dataChanged.emit(row, column)
+        except IndexError:
+            print('IndexError exception caught and ignored.')
         return
 
 

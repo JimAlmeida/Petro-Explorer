@@ -34,11 +34,17 @@ class Rock:
     def setPhi(self, _phi):
         self.phi = array(_phi)
 
+    def setSwir(self, _swir):
+        self.swir = array(_swir)
+
     def getK(self):
         return self.k
 
     def getPhi(self):
         return self.phi
+
+    def getSwir(self):
+        return self.swir
 
     def addRegr(self, regression_coefficients: tuple):
         self.regressions.append(regression_coefficients)

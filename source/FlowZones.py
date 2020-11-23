@@ -22,6 +22,7 @@ class FlowZones:
         self.swir = swir
         self.unit = unit
         self.rock = _sample
+        self.rock.setPhi([p / 100 for p in _sample.getPhi()])  # convert porosity from % to decimal
         self.plot_path = ''
         self.json = ''
         self.fig = go.Figure()

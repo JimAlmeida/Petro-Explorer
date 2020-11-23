@@ -40,7 +40,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -91,7 +91,7 @@
       <method v="2" />
     </configuration>
     <configuration name="MainWindow (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="TCC" />
+      <module name="Petro-Explorer" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -112,18 +112,39 @@
       <method v="2" />
     </configuration>
     <configuration name="MainWindow" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="TCC" />
+      <module name="Petro-Explorer" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="" />
+      <option name="SDK_HOME" value="C:\Users\thiag\AppData\Local\Programs\Python\Python39\python.exe" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
+      <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/MainWindow.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="MainWindow" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Petro-Explorer" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Users\thiag\AppData\Local\Programs\Python\Python39\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/source" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/source/MainWindow.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -157,9 +178,9 @@
       <list>
         <item itemvalue="Python.MainWindow (1)" />
         <item itemvalue="Python.MainWindow" />
+        <item itemvalue="Python.MainWindow" />
         <item itemvalue="Python.PlotRecon" />
         <item itemvalue="Python.Atlas(1)" />
-        <item itemvalue="Python.ApplicationWindow" />
       </list>
     </recent_temporary>
   </component>
@@ -194,10 +215,14 @@
     <option name="LAST_COMMIT_MESSAGE" value="Initial commit" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="552" y="178" key="#Notifications" timestamp="1596650607972">
+    <state x="679" y="146" key="#MainWindow" timestamp="1605287716277">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="178" key="#Notifications/0.0.1920.1040@0.0.1920.1040" timestamp="1596650607972" />
+    <state x="679" y="146" key="#MainWindow/0.0.1920.1040@0.0.1920.1040" timestamp="1605287716277" />
+    <state x="691" y="146" key="#MainWindow_(1)" timestamp="1605184753802">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="691" y="146" key="#MainWindow_(1)/0.0.1920.1040@0.0.1920.1040" timestamp="1605184753802" />
     <state x="614" y="116" key="CommitChangelistDialog2" timestamp="1605122437334">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -222,30 +247,46 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="783" y="225" key="Github.UntrackedFilesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1605122302444" />
-    <state width="1899" height="192" key="GridCell.Tab.0.bottom" timestamp="1605124239074">
+    <state width="1899" height="192" key="GridCell.Tab.0.bottom" timestamp="1606090470054">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="192" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1605124239074" />
-    <state width="1899" height="192" key="GridCell.Tab.0.center" timestamp="1605124239074">
+    <state width="1899" height="192" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1606090470054" />
+    <state width="1899" height="192" key="GridCell.Tab.0.center" timestamp="1606090470054">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="192" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1605124239074" />
-    <state width="1899" height="192" key="GridCell.Tab.0.left" timestamp="1605124239074">
+    <state width="1899" height="192" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1606090470054" />
+    <state width="1899" height="192" key="GridCell.Tab.0.left" timestamp="1606090470054">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="192" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1605124239074" />
-    <state width="1899" height="192" key="GridCell.Tab.0.right" timestamp="1605124239074">
+    <state width="1899" height="192" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1606090470054" />
+    <state width="1899" height="192" key="GridCell.Tab.0.right" timestamp="1606090470054">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="192" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1605124239074" />
-    <state x="461" y="162" key="SettingsEditor" timestamp="1605123599174">
+    <state width="1899" height="192" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1606090470054" />
+    <state width="1899" height="347" key="GridCell.Tab.1.bottom" timestamp="1605555286790">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="461" y="162" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1605123599174" />
-    <state x="504" y="251" key="com.intellij.ide.util.TipDialog" timestamp="1605122120226">
+    <state width="1899" height="347" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1605555286790" />
+    <state width="1899" height="347" key="GridCell.Tab.1.center" timestamp="1605555286790">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="504" y="251" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1605122120226" />
+    <state width="1899" height="347" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1605555286790" />
+    <state width="1899" height="347" key="GridCell.Tab.1.left" timestamp="1605555286790">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1899" height="347" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1605555286790" />
+    <state width="1899" height="347" key="GridCell.Tab.1.right" timestamp="1605555286790">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1899" height="347" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1605555286790" />
+    <state x="461" y="162" key="SettingsEditor" timestamp="1605184735653">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="461" y="162" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1605184735653" />
+    <state x="504" y="251" key="com.intellij.ide.util.TipDialog" timestamp="1606090311797">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="504" y="251" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1606090311797" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
