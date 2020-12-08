@@ -3,7 +3,6 @@ from Rock import Rock
 
 
 def tCoatesManifold(k, phi, swir, calculation, queue):
-    print('ManifoldeY', k, phi, swir)
     sample = Rock(k, phi, swir)
     tc_calculation = TimurCoates(sample)
     results = []
@@ -62,14 +61,12 @@ class TimurCoates:
 
     def calcBVI(self):
         x = self.rock.getPhi()
-
         for i in range(len(x)):
             v = x[i] * self.swir[i]/100
             self.bvi = np.append(self.bvi, v)
 
     def calcFFI(self):
         x = self.rock.getPhi()
-        print(x, self.swir)
         for i in range(len(x)):
             f = x[i] * (1 - self.swir[i]/100)
             self.ffi = np.append(self.ffi, f)

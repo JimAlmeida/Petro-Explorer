@@ -75,7 +75,6 @@ class PlotControls(QWidget):
         assert (isinstance(_json, str))
 
         j_obj = j.loads(_json)
-        print(j_obj)
         
         try:
             if 'title' in list(j_obj['layout'].keys()):

@@ -9,9 +9,6 @@ numpyarray = np.ndarray
 def statisticsManifold(_xdata: list, method: str, quartile, percentile, queue):
     xdata = np.array([float(x) for x in _xdata if extractor(x)])
 
-    print("Quartile Number:", quartile)
-    print("Percentile Number:", percentile)
-
     st = Statistics(xdata)
     methods = ['Média aritmética', 'Média Ponderada', 'Mediana', 'Moda', 'Variância Pop.', 'Variância Am.', 'Desvio Padrão Pop.', 'Desvio Padrão Am.', 'Máximo', 'Mínimo', 'Amplitude', 'Quartil', 'Percentil']
     container = []

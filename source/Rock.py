@@ -23,9 +23,6 @@ class Rock:
         self.phi = array([float(x) for x in _phi if extractor(x)])
         self.swir = array([float(z) for z in _swir if extractor(z)])
 
-        print(self.k)
-        print(self.phi)
-
         self.regressions = []  # armazena os coeficientes de regressão no formato [(a,b), (a,b,c), ...]
 
     def setK(self, _k):
