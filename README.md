@@ -37,3 +37,5 @@ Depois que o texto for digitado, é necessário salvar o arquivo na extensão *.
 	![Tela 13](https://imgur.com/nFh0H60.png)
 **Parabéns, você chegou ao final da instalação!**
 
+Você também pode assistir um mini-tutorial para realizar sua primeira análise com o conjunto de dados contido neste repositório. Acesse o link: https://youtu.be/DEoA1BOFzmo
+
