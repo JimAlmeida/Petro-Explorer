@@ -14,7 +14,7 @@ class PetrophysicsOptions(QWidget):
         'Lucia': {'param1': 'Classificação de Lucia (Gráfico de classes carbonáticas)', 'param2': '', 'param3': '', 'param4': '', 'prop1': ['Permeabilidade (mD)', 'Porosidade Interpartícula (%)'], 'prop2': '', 'prop3': '', 'prop4': ''},
         'RQIFZI':  {'param1': 'RQI (μm)', 'param2': 'FZI (gráfico)', 'param3': '', 'param4': '', 'prop1': ['Permeabilidade', 'Porosidade (%)'], 'prop2': ['Permeabilidade', 'Porosidade (%)'], 'prop3': [], 'prop4': []},
         'TCoates':  {'param1': 'FFI', 'param2': 'BVI', 'param3': 'Permeabilidade (mD)', 'param4': 'Swir (%)', 'prop1': ['Swir (%)', 'Porosidade (%)'], 'prop2': ['Swir (%)', 'Porosidade (%)'], 'prop3': ['Swir (%)', 'Porosidade (%)'], 'prop4': ['Permeabilidade (mD)', 'Porosidade (%)']},
-        'KCarman': {'param1': 'Permeabilidade (mD)', 'param2': 'SVgr (cm-1)', 'param3': '', 'param4': '', 'prop1': ['Porosidade (decimal)', 'SVgr (cm-1)'], 'prop2': ['Permeabilidade (mD)', 'Porosidade (decimal)'], 'prop3': ['Permeabilidade (cm²)', 'Porosidade (decimal)'], 'prop4': []}
+        'KCarman': {'param1': 'Permeabilidade (mD)', 'param2': 'SVgr (cm-1)', 'param3': '', 'param4': '', 'prop1': ['Porosidade (%)', 'SVgr (cm-1)'], 'prop2': ['Permeabilidade (mD)', 'Porosidade (%)'], 'prop3': ['Permeabilidade (cm²)', 'Porosidade (decimal)'], 'prop4': []}
     }
     ready2calculate = Signal(bool)
 

@@ -25,7 +25,7 @@ def pceManifold(json, title, xtype, ytype, xlabel, ylabel, lxrange, uxrange, lyr
     if xtype is not None:
         engine.changeXType(xtype)
     if ytype is not None:
-        engine.changeYType(xtype)
+        engine.changeYType(ytype)
     if xlabel is not None:
         engine.changeXLabel(xlabel)
     if ylabel is not None:
