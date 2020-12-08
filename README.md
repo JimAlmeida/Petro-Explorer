@@ -6,7 +6,7 @@
  3. Aguarde o final da instalação e feche o prompt quando chegar à esta tela:![Tela Instalação 2](https://imgur.com/tFESv7S.png)
  4. Abra o prompt de comando (CMD) e teste se a instalação Python ocorreu com sucesso digitando "python". Se você ver essa tela, tudo ocorreu bem. Para sair, do interpretador digite "exit()".![Tela Instalação 3](https://imgur.com/7Aaqq3Q.png)
  5. Digite a seguinte linha de comando no CMD: 
- `python -m pip install numpy scipy pandas requests ipython nbformat psutil plotly xlrd PySide2`
+ `python -m pip install numpy scipy pandas requests ipython nbformat psutil plotly openpyxl xlrd PySide2`
  Esse comando serve para instalar as bibliotecas utilizadas pelo programa.
 ![Tela Instalação 4](https://imgur.com/zTS8Wcl.png)
  6. Faça o download deste repositório para o seu Desktop. Uma possível maneira é por realizar o download direto do GitHub (Download ZIP), como na imagem:
